@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Custom Journey Builder Activity</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script type="text/javascript" src="js/jquery/dist/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/styles/salesforce-lightning-design-system.min.css"
+    />
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript">
+      (function () {
+        var config = {
+          baseUrl: "js",
+        };
+        var dependencies = ["runningHover"];
+        require(config, dependencies);
+      })();
+    </script>
+
+    <!--Styles-->
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+
+      .center {
+        margin: auto;
+        padding: 3px;
+      }
+
+      .imgSize {
+        width: 25px;
+        height: 25px;
+      }
+
+      html {
+        background: white;
+      }
+
+      body {
+        padding: 10px;
+        margin: 0;
+      }
+
+      h4 {
+        text-align: center;
+      }
+
+      hr {
+        height: 2px;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="step1">
+      <!--<h4>Domain Thresholds</h4>
+        <hr style="height:3px;border-width:0;margin-top: 0.5rem;margin-right: 0rem;margin-bottom: 0.5rem;margin-left: 0rem;color:gray;background-color:gray">
+        <div>
+            <div class="column"  style="width:25%;">
+                <img src="images/inbox_idle.png" alt="inbox" style="width:50px;height:50px">
+            </div>
+            <div class="column" style="width:45%;"><b>Inbox</b></div><div id="inbox_threshold" class="column" style="width:30%;"></div>
+        </div>
+        <hr style="height:3px;border-width:0;margin-top: 0.5rem;margin-right: 0rem;margin-bottom: 0.5rem;margin-left: 0rem;color:gray;background-color:gray">
+        <div >
+            <div class="column"  style="width:25%;">
+                <img src="images/engagement_idle.png" alt="Engagement" style="width:50px;height:50px">
+            </div>
+            <div class="column" style="width:45%;"><b>Engage</b></div><div id="engagement_threshold" class="column" style="width:30%;"></div>
+        </div>
+        <hr style="height:3px;border-width:0;margin-top: 0.5rem;margin-right: 0rem;margin-bottom: 0.5rem;margin-left: 0rem;color:gray;background-color:gray">
+        <div >
+            <div class="column"  style="width:25%;">
+                <img src="images/spf_idle.png" alt="SPF" style="width:50px;height:50px">
+            </div>
+            <div class="column" style="width:45%;"><b>SPF</b></div><div id="spf_threshold" class="column" style="width:30%;"></div>
+        </div>
+        <hr style="height:3px;border-width:0;margin-top: 0.5rem;margin-right: 0rem;margin-bottom: 0.5rem;margin-left: 0rem;color:gray;background-color:gray">
+        <div >
+            <div class="column"  style="width:25%;">
+                <img src="images/dkim_idle.png" alt="DKIM" style="width:50px;height:50px">
+            </div>
+            <div class="column" style="width:45%;"><b>DKIM</b></div><div id="dkim_threshold" class="column" style="width:30%;"></div>
+        </div>-->
+
+      <h4><b>Campaign Performance</b></h4>
+      <hr />
+
+      <div class="slds-grid slds-wrap">
+        <div id="inbox_idle" class="slds-col slds-size_1-of-4">
+          <!--<span><img class="imgSize" src="images/inbox_idle.png" alt="inbox"></span>-->
+        </div>
+        <div class="slds-col slds-size_2-of-4 center">
+          <span><b>Inbox</b></span>
+        </div>
+        <div
+          id="inbox_threshold"
+          class="slds-col slds-size_1-of-4 center"
+        ></div>
+      </div>
+
+      <hr />
+      <div class="slds-grid slds-wrap">
+        <div id="engagement_idle" class="slds-col slds-size_1-of-4">
+          <!--<span ><img class="imgSize" src="images/engagement_idle.png" alt="Engagement"></span>-->
+        </div>
+        <div class="slds-col slds-size_2-of-4 center">
+          <span><b>Engagement</b></span>
+        </div>
+        <div
+          id="engagement_threshold"
+          class="slds-col slds-size_1-of-4 center"
+        ></div>
+      </div>
+
+      <hr />
+      <div class="slds-grid slds-wrap">
+        <div id="spf_idle" class="slds-col slds-size_1-of-4">
+          <!--<span ><img class="imgSize" src="images/spf_idle.png" alt="SPF"></span>-->
+        </div>
+        <div class="slds-col slds-size_2-of-4 center">
+          <span><b>SPF</b></span>
+        </div>
+        <div id="spf_threshold" class="slds-col slds-size_1-of-4 center"></div>
+      </div>
+
+      <hr />
+      <div class="slds-grid slds-wrap">
+        <div id="dkim_idle" class="slds-col slds-size_1-of-4">
+          <!--<span ><img class="imgSize" src="images/dkim_idle.png" alt="DKIM"></span>-->
+        </div>
+        <div class="slds-col slds-size_2-of-4 center">
+          <span><b>DKIM</b></span>
+        </div>
+        <div id="dkim_threshold" class="slds-col slds-size_1-of-4 center"></div>
+      </div>
+      <hr />
+    </div>
+    <div id="step2">
+      <div class="demo-only" class="slds-align--absolute-center">
+        <div class="slds-spinner_container">
+          <div role="status" class="slds-spinner slds-spinner_medium">
+            <span class="slds-assistive-text">Loading</span>
+            <div class="slds-spinner__dot-a"></div>
+            <div class="slds-spinner__dot-b"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

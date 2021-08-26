@@ -1,0 +1,292 @@
+
+
+
+a:hover,
+a:active,
+a:focus {    
+  text-decoration: none;
+}
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {  
+  font-weight: 400;
+  margin: 0 0 05px 0;
+  padding: 0;
+}
+h3{	
+	font-size: 30px;
+}
+h4{	
+	font-size: 24px;
+} */
+section.section p{	
+	font-size: 14px;	
+}
+.section{
+	padding: 10px 10px;
+}
+section.section .bold{
+	font-weight: bolder;
+}
+section.section a.btn{
+	font-size: 12px;
+	background: #42546c;
+	color: #fff;
+	padding: 1px 12px;
+}
+section.section p.small{
+	margin-bottom: 0px !important;
+	font-weight: bolder;
+	font-size: 14px;
+}
+.sales label{
+	margin-bottom: 0px !important;
+	font-weight: bolder;
+	font-size: 14px;
+}
+
+.section-one{
+	padding: 10px;
+    box-shadow: 0px 2px 12px rgb(0 0 0 / 14%);
+    border-radius: 7px;
+}
+.img-bg{
+	background: #fa6222;
+    height: 25px;
+    padding: 14px;
+}
+section.section  .title{
+	position: relative;
+    top: 3px;
+}
+.bounce_perf i{
+	font-size: 13px;
+	margin-right: 5px;
+}
+.bounce_perf i.red{
+	color: #fa6222;
+}
+.bounce_perf i.yellow{
+	color: #ffb75d;
+}
+.bounce_perf i.grey{
+	color: #d4cad1;
+}
+.progressBar{
+	padding-bottom: 65px; 
+}
+ @-moz-document url-prefix() {
+	.progressBar {
+		padding-bottom: 100px !important;
+	}
+}
+.border-right{
+	border-right: 1px solid grey;
+}
+.img-preview p.small{
+	/* padding-top: 56px; */
+	margin-top: 25px;
+	margin-bottom: 20px !important;
+}
+.sales .img-preview p.small{
+	padding: 55px 20px;
+}
+.email_delivery .progressBar label{
+	white-space: nowrap;
+}
+.email_delivery .progressBar ul{
+	margin-left: 100px;
+    position: relative;
+    top: -21px;
+    font-size: 69%;
+}
+.email_delivery .progressBar ul li{
+	margin-bottom: 4px;
+}
+
+@media (max-width:575px){
+	.email_delivery .progressBar ul {
+		position: relative;
+		top: 50px;
+	}
+
+}
+@media (max-width:767px){
+	.xs-mb-50{
+		margin-bottom: 50px;
+	}
+	
+}
+@media (max-width:991px){
+	.sm-mb-50{
+		margin-bottom: 10px;
+	}
+	.sm-text-left{
+		text-align: right !important;
+	}
+	.border-left{
+		border: none !important;
+	}
+	.border-right{
+		border: none !important;
+	}
+	.img-preview{
+		border-top: 1px solid #dee2e6;
+		margin-top: 22px;
+		padding: 0px !important;
+	}
+	.email_delivery{
+		/* border-top: 1px solid #dee2e6; */
+		margin-top: 5px;
+		padding-top: 5px;
+	}
+}
+@media (min-width:992px) and (max-width:1100px){
+	.sales .progress-bar{
+		width: 80px !important;
+	}
+	.sales .progress-bar.spf{
+		position: relative;
+		right: 14px;
+	}
+}
+
+@media (min-width:768px){
+	.section-two .section-one{
+		width: 49% !important;
+	}
+
+	.section-two .section-sixty{
+		width: 59% !important;
+	}
+	
+	.section-two .section-forty{
+		width: 39% !important;
+	}
+
+	.section-three .section-one{
+		width: 33% !important;
+	}
+
+}
+@media (min-width:1100px){
+	.email_delivery .progressBar {
+		/* padding: 40px 40px 150px 20px !important; */
+		padding: 40px 5px 70px 25px !important;
+	}
+	
+}
+
+@media (max-width:767px){
+	.section-two .section-one{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+}	
+.engagement_detail {
+	background: #f2f2f2;
+	padding: 35px 50px;
+	padding-bottom: 15px;
+	margin: 0px 10px;
+}
+.engagement_detail label{
+	margin-bottom: 0px !important;	
+	font-size: 14px;
+}
+
+.engagement_detail input{
+	border-radius: 20px;
+    padding: 3px 10px;
+}
+.progressDiv{
+	margin-bottom: 20px;	
+}
+@media (min-width:992px){
+	.progressDiv{	
+		width: 65%;
+	}
+}
+.progressDiv .progress{
+	border-radius: 20px;
+    height: 12px;
+	background-color: #ccdcec;
+}
+.progressDiv .progress-bar{
+	border-radius: 20px;
+}
+.progressDiv .progress-bar.dark-grey{
+	background-color: #43546a;
+}
+.progressDiv .progress-bar.red{
+	background-color: #fc0100;
+}
+.progressDiv .progress-bar.yellow{
+	background-color: #ffb75d;
+}
+.progressDiv .progress-bar span{
+	display: none;
+}
+
+
+
+.delivery_detail {
+	background: #f2f2f2;
+	padding: 35px 50px;
+	padding-bottom: 15px;
+	margin: 0px 10px;
+	height: 92%;
+}
+.delivery_detail div.square{
+	padding: 16px 16px;
+    border: 1px solid #dee2e6;
+    /* width: 44px;     */
+    background: #fff;
+    box-shadow: 0px 2px 5px rgb(0 0 0 / 14%);
+	margin-right: 14px;
+	border-radius: 7px;
+	margin-bottom: 14px;
+	align-self: center;
+}
+.delivery_detail .delivery_progress p{
+	font-size: 12px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.delivery_progress{
+	margin-bottom: 20px;	
+}
+.delivery_progress{	
+	width: 100%;
+}
+
+.delivery_progress .progress{
+	border-radius: 20px;
+    height: 14px;
+	background-color: #FA6222;
+	border: 2px solid #FA6222;
+}
+.delivery_progress .progress-bar{
+	border-radius: 20px;
+}
+.delivery_progress .progress-bar.success{
+	background-color: #48CA81;
+}
+
+.delivery_progress .progress-bar span{
+	display: none;
+}
+
+@media (max-width:767px){	
+	.engagement_detail {	
+		padding: 35px;	
+	}
+	.delivery_detail {	
+		padding: 35px;	
+	}
+}
+
+
+

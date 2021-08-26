@@ -1,0 +1,280 @@
+
+
+.alignLeft{
+  margin-left: 50px;
+}
+.alignLeftWc{
+  margin-left: 0.4%;
+}
+.tab { 
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+.atag {
+  text-decoration-line: none;
+  color: #0070d2;
+  font-weight: bold;
+}
+.camp{
+  text-decoration-line: none;
+  color : #fa6223;
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px; 
+  transition: 0.3s;
+  font-size: 17px;
+}
+.bttnBorder {
+  border-bottom: 6px solid;
+  margin-block-start: 0em;  
+   margin-block-end: -1em;
+  padding-bottom: 5px;
+  border-color:#B74719;
+}
+.tab button.bttnBorder {
+  border-bottom: 6px solid;
+}
+.tabcontent {
+  display: none;
+  
+  border-top: none;
+  }
+.dropbtn {
+  background-color:none;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown a:hover {background-color: #ddd;
+}
+.show {display: block;
+}
+table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 100%;
+}
+th,td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.innerbox{
+  border: 1px solid rgb(240, 235, 235);
+  padding-top: 2%;
+    padding-right: 1%;
+    padding-bottom: 5%;
+    padding-left: 1%;
+}
+.footer {
+  position: fixed;
+    padding: 3px;
+    bottom: 0;
+    width: 102%;
+    background-color: #fa6223;
+    color: white;
+    text-align: center;
+    margin-left: -8px;
+}
+.bodyposition{ 
+  position: relative;
+  padding-bottom: 74px;
+  font-family: Arial;
+  overflow-x: hidden;
+}
+.modalHeight {
+  margin-top: 41px;
+  margin-left: -83px;
+  width:40px;
+}
+.topbox{
+  border: 1px solid rgb(240, 235, 235);
+  margin-top: 15px;
+  padding: 12px;
+  text-align: left;
+  header: 10px;
+  color:darkblue;
+}
+table {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.spanTracker {
+	border-style: solid;
+	border-width: 2px;
+	padding-left: 10px;
+  padding-right: 10px;
+	color: #fa6223;
+  border-radius:3px;
+  font-weight: bold;
+  text-decoration-line: none;
+}
+.outerAttRow {
+	border-style: thin;
+}
+.pointer {
+	cursor: pointer;
+}
+.spanTracker1 {
+	display: inline-table;
+    border-style: solid;
+    border-width: thin;
+    color: #fa6223;
+    background-color: #fa6223;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 3px;
+    }
+.spanTracker2 {
+  padding: 2px;
+  border-style: solid;
+  border-width: thin;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-bottom: 4px;
+  color: #fa6223;
+  background-color: #fa6223;
+  border-radius: 5px;
+}
+
+.spanTracker3{
+  padding: 0px;
+    border-style: solid;
+    border-width: thin;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    color: #fa6223;
+    background-color: #fa6223;
+    border-radius: 5px;
+}
+.dv1Table{
+ padding-top:10px;
+}
+.outerbox{
+  display: inline-table;
+  width: 97%;
+    border: 1px solid rgb(240, 235, 235);
+    padding: 1.4%;
+    height: 100%;
+    padding-bottom: 3%
+}
+.track{
+  color:#fa6223;
+}
+.setuptop{
+  margin-top:-15px;
+}
+
+.mainRunner {
+  display: inline-block;
+    margin-bottom: 2%;
+
+}
+
+.mainRunner2 {
+  position: absolute;
+  
+  bottom: 33px;
+    left: 7px;
+}
+.mainRunner3 {
+position: absolute;
+left: 7px;
+}
+
+.img1 {
+ 
+  position: absolute;
+  z-index: 2;
+  border-radius: 6px;
+}
+
+.img2 {
+  
+  position: absolute;
+  z-index: 2;
+  padding-top: 3px;
+  
+}
+
+.ISPstyle{
+  margin-left: 9px;
+  margin-top: 12px;
+  background-color: rgb(192, 192, 192);
+  width: 200px;
+  border-radius:15px;
+  height:10px;
+}
+.ISPname{
+  position: absolute;
+  margin-top: -3%;
+  margin-left: 28%;
+}
+
+#spinner{
+  visibility: hidden;
+  width: 80px;
+  height: 80px;
+
+  border: 2px solid #f3f3f3;
+  border-top:3px solid gray;
+  border-radius: 100%;
+
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  margin: auto;
+
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  } to {
+      transform: rotate(360deg);
+  }
+}
+
+#spinner.show {
+  visibility: visible;
+}
+
+.titleHeader{
+  display: flex;
+    margin-left: 54px;
+    margin-top: -27px;
+}
+
+

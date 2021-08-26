@@ -1,0 +1,86 @@
+
+.position {
+  /* float: left; */
+  margin: 0px 10px;
+  margin-top : 60px;
+}
+ @-moz-document url-prefix() {
+	.position {
+		margin-top: 10px !important;
+	}
+}
+
+.sales .progress-bar {
+  position: relative;
+  height: auto;
+  width: 90px;
+  color: #000 !important;
+  background: #fff !important;
+}
+
+.sales .progress-bar div {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+/* 
+.progress-bar div span {
+  position: absolute;
+  font-family: Arial;
+  font-size: 25px;
+  line-height: 175px;
+  height: 175px;
+  width: 175px;
+  left: 12.5px;
+  top: 12.5px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+}
+ */
+.sales .progress-bar div span {
+	position: absolute;
+    font-family: Arial;
+    font-size: 18px;
+    line-height: 85px;
+   /*  height: 90px;
+    width: 90px;
+    left: 5px;
+    top: 4.5px; */
+	height: 80px;
+    width: 80px;
+    left: 10px;
+    top: 10px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.sales .progress-bar .background { background-color: #b3cef6; }
+
+.sales .progress-bar .rotate {
+  clip: rect(0px 50px 200px 0);
+  background-color: #4b86db;
+}
+
+.sales .progress-bar .left {
+  clip: rect(0px 50px 200px 0);
+  opacity: 1;
+  background-color: #b3cef6;
+}
+
+.sales .progress-bar .right {
+  clip: rect(0px 50px 200px 0);
+  transform: rotate(180deg);
+  opacity: 0;
+  background-color: #4b86db;
+}
+ @keyframes 
+toggle {  0% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 1;
+}
+}

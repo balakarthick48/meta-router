@@ -1,0 +1,83 @@
+{
+    "workflowApiVersion": "1.0",
+    "metaData": {
+        "icon": "images/icon.png",
+        "iconSmall": "images/iconSmall.png"       
+    },
+    "type": "REST",
+    "lang": {
+        "en-US": {
+            "name": "Inbox Tracker",
+          "description": "A Template for a custom Journey Builder activity",
+          "step1Label": "Configure Activity",
+          "runningHoverButtonLabel": "View Campaign Details"
+        }
+    },
+    "arguments": {
+        "execute": {
+           "inArguments":[
+		{
+                    "contactIdentifier": "{{Contact.Key}}"
+                }
+	   ],
+          "outArguments": [],
+          "url": "https://sfmc-appexchange.emailanalyst.com/journeybuilder/execute",
+           "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": true,
+	    "retryCount": 1,
+	    "retryDelay": 10000,
+	    "concurrentRequests" : 5,
+	    "timeout": 10000
+        }
+    },
+    "configurationArguments": {
+      "applicationExtensionKey": "a7acfd01-1b82-4586-8ff7-c95d2986fa72",
+      "save": {
+        "url": "https://sfmc-appexchange.emailanalyst.com/journeybuilder/save",
+          "verb": "POST",
+        "useJwt": true
+       },
+       "publish": {
+        "url": "https://sfmc-appexchange.emailanalyst.com/journeybuilder/publish",
+           "verb": "POST",
+        "useJwt": true
+       },
+      "stop": {
+        "url": "https://sfmc-appexchange.emailanalyst.com/journeybuilder/stop",
+           "verb": "POST",
+        "useJwt": true
+      },
+      "validate": {
+        "url": "https://sfmc-appexchange.emailanalyst.com/journeybuilder/validate",
+        "verb": "POST",
+        "useJwt": true
+      }
+    },
+    "wizardSteps": [
+        { "label": "Configure Activity", "key": "step1" }
+    ],
+    "userInterfaces": {
+        "configModal": {
+            "height": 300,
+            "width": 500,
+          "fullscreen": false
+        },
+        "runningModal": {
+          "url": "runningModal.html"
+        },
+        "runningHover": {
+          "url": "runningHover.html"
+        }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [],
+                "outArguments": []
+            }
+        }
+    }
+}
