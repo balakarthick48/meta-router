@@ -467,10 +467,13 @@
 														$('#rt').val(response.data.refreshToken);
 														console.log("Response for the sender profile Domain Name ::: " + JSON.stringify(response.data))
 														var sentParams = response.config.params;
-														var senderProfileDomainName = response.data.domainName.split("@")
-														console.log("sender Profile Domain Name ::: " + senderProfileDomainName[1]);
+														var senderProfileDomainName = response.data.domainName
+														if (senderProfileDomainName.indexOf("@") >= 0) {
+														    senderProfileDomainName = response.data.domainName.split("@")[1]
+													  }
+														console.log("sender Profile Domain Name ::: " + senderProfileDomainName);
 														console.log("response for the senderProfileID " + JSON.stringify(response.data));
-														activityArray.push([json["name"], json["status"], json["journeyId"], sentParams["emailSubject"], sentParams["templateName"], json["version"], senderProfileDomainName[1], emailId]);
+														activityArray.push([json["name"], json["status"], json["journeyId"], sentParams["emailSubject"], sentParams["templateName"], json["version"], senderProfileDomainName, emailId]);
 														if (activityArray.length > 0) {
 															for (var i = 0; i < activityArray.length; i++) {
 																axios({
@@ -493,6 +496,7 @@
 																			if (response.data.subjectData) {
 																				sparkSubjectCount = 0;
 
+																				//for (ivar = 0; ivar < response.data.length; ivar++) {
 																				sparkSubjectCount++;
 																				//sometime we got multiple response with correct subject and incorrect subject.
 																				//here we handle duplicate subject to add else statement. 
@@ -505,6 +509,7 @@
 
 																				//}
 
+																				//if ((response.data.length == 1) ||(json["subject"] == response.data[ivar]["subject"])) {
 																				//this true used for got subject from sparkpost
 																				sparkSubject = true;
 																				Customerlen = true;
@@ -632,7 +637,9 @@
 																						dkimGreenimage = 'gray';
 																					}
 																					campaign.push([json["journeyName"], response.data.subjectData["lastSeen"], str, readGreenimage, InboxGreenimage, dkimGreenimage, InboxImage, engagementimg, spfimg, dkimimg, spfGreenimage, json["activityname"], response.data.subjectData["campaignIdentifier"], "common"]);
-																					} else {
+																					// }
+																					// } 
+																				} else {
 																					campaign.push([json["journeyName"], response.data.subjectData["lastSeen"], str, 'gray', 'gray', 'gray', '<img src="/images/inbox_idle.png" alt="logo" heigth="12" width="15"></img>', '<img src="/images/engagement_idle.png" alt="logo" heigth="12" width="15"></img>', '<img src="/images/spf_idle.png" alt="logo" heigth="12" width="15"></img>', '<img src="/images/dkim_idle.png" alt="logo" heigth="12" width="15"></img>', 'gray', json["activityname"], response.data.subjectData["campaignIdentifier"], "common"]);
 																				}
 																				
