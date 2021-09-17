@@ -6,6 +6,7 @@ import express = require("express");
 import Utils from "./Utils";
 import xml2js = require("xml2js");
 let activity = require(path.join(__dirname, "..", "routes", "activity.js"));
+import mcGenericMethods = require("mc_generic_methods");
 
 require("dotenv").config();
 export default class SfmcApiHelper {
@@ -696,6 +697,20 @@ export default class SfmcApiHelper {
     res: any,
     tssd: string
   ): Promise<any> {
+    let accessTokenMethod = new mcGenericMethods.default();
+
+    accessTokenMethod
+      .getOAuthAccessToken()
+      .then((res) => {
+        // If the function successfully retrieves the data, it enters this block
+        console.log(
+          "This is the library function for getting access token ::: ",
+          res.data
+        ); // Print the contest data on the console
+      })
+      .catch((err) => {
+        console.log(err); // Error handler
+      });
     return new Promise<any>((resolve, reject) => {
       console.log("author" + JSON.stringify(tssd));
       let sfmcAuthServiceApiUrl =
