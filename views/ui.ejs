@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"
+      integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <script>
+      let tssd = "<%-tssd%>";
+      //  let tssd = "<%= typeof tssd != 'undefined' ? tssd : 'default' %>";
+    </script>
+
+    <script type="text/babel">
+      //Used to generate the access token
+      function accessTokenGeneration(thisdata) {
+        axios({
+          method: "POST",
+          url: "/appdemoauthtoken",
+          data: {
+            authorization_code: thisdata.state.authorization_code,
+            tssd: thisdata.state.tssd,
+          },
+        })
+          .then(function (response) {
+            console.log(
+              "accesstokengeneration:" +
+                JSON.stringify(response.data.refreshToken)
+            );
+            thisdata.setState({ refreshtoken: response.data.refreshToken });
+            AppUserInfo(thisdata, response.data.refreshToken);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+
+      //Used to fetch the user information
+      function AppUserInfo(thisdata, refreshToken) {
+        axios({
+          method: "POST",
+          url: "/appuserinfo",
+          data: { refreshToken: refreshToken, tssd: thisdata.state.tssd },
+        })
+          .then(function (response) {
+            console.log("appuserinfo:" + JSON.stringify(response));
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+
+      class SparkpostPage1 extends React.Component {
+        constructor(props) {
+          super(props);
+          //default value for MC Vars
+          this.refreshtoken = "";
+
+          const authorization_code = url.searchParams.get("code");
+          this.refreshtoken = url.searchParams.get("rt");
+          if (authorization_code != undefined && authorization_code != "") {
+            this.authorization_code = authorization_code;
+          }
+
+          this.state = {
+            authorization_code: this.authorization_code,
+            tssd: tssd,
+            refreshtoken: this.refreshtoken,
+          };
+        }
+
+        //we are using componentDidMount for obtaining the authentication code for web app
+        //and for storing the toggled value of the intelliseed dynamically after redirecting
+        componentDidMount() {
+          let thisdata = this;
+          //var PercentofListPushed = thisdata.intelliseed;
+
+          if (
+            thisdata.state.authorization_code != "" &&
+            thisdata.state.authorization_code != undefined
+          ) {
+            accessTokenGeneration(thisdata);
+          }
+        }
+
+        //renders the UI based on the page number
+        render() {
+          if (
+            this.state.refreshtoken != undefined ||
+            this.state.refreshtoken != ""
+          ) {
+            return <div></div>;
+          }
+        }
+      }
+
+      //this is the starting point of react.js
+      ReactDOM.render(<SparkpostPage1 />, document.getElementById("mydiv"));
+    </script>
+  </body>
+</html>
